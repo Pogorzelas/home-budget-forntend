@@ -10,7 +10,7 @@ interface Props {
 const APP_NAME = 'Kabona ';
 
 export const Header: FC<Props> = ({classes}) =>
-  <AppBar position='fixed'>
+  <AppBar position='static'>
     <Typography
       variant='h1'
       component='h1'
