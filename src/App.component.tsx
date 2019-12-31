@@ -1,11 +1,16 @@
 import React, {FC} from 'react';
-import styles from  './App.module.scss';
+import Header from "./layouts/Header/index";
+import {useAppProvider} from "./useAppProvider";
+import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
 
 const App: FC = () => {
+  const {theme} = useAppProvider();
   return (
-    <div className={styles.container}>
-      Domowy Budżet
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline/>
+      <Header/>
+
+    </MuiThemeProvider>
   );
 };
 
