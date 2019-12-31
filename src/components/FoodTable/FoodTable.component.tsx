@@ -2,14 +2,20 @@ import React, {FC, ReactElement} from "react";
 import {useFoodTable} from "./useFoodTable";
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 
+interface Props {
+  classes: {
+    root: string;
+  }
+}
+
 const DAY = 'dzień';
 const SPEND = 'wydatek';
 
-export const FoodTable: FC = () => {
+export const FoodTable: FC<Props> = ({classes}) => {
   const {data} = useFoodTable();
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer component={Paper} className={classes.root}>
+      <Table size='small'>
         <TableHead>
           <TableRow>
             <TableCell>{DAY}</TableCell>
