@@ -12,7 +12,7 @@ const DAY = 'dzień';
 const SPEND = 'wydatek';
 
 export const FoodTable: FC<Props> = ({classes}) => {
-  const {data} = useFoodTable();
+  const {food} = useFoodTable();
   return (
     <TableContainer component={Paper} className={classes.root}>
       <Table size='small'>
@@ -24,7 +24,7 @@ export const FoodTable: FC<Props> = ({classes}) => {
         </TableHead>
         <TableBody>
           {
-            data.map((row): ReactElement =>
+            food.map((row): ReactElement =>
               <TableRow key={row.day}>
                 <TableCell>{row.day}</TableCell>
                 <TableCell>{row.spend}</TableCell>

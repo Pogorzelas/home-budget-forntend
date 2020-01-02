@@ -3,17 +3,17 @@ import {useEffect, useState} from "react";
 import {spendInJanuary} from "../../temporary const/foods";
 
 interface Hook {
-  data: SpendFood[];
+  food: SpendFood[];
 }
 
 export const useFoodTable = (): Hook => {
-  const [data, setData] = useState<SpendFood[]>([]);
+  const [food, setFood] = useState<SpendFood[]>([]);
 
   useEffect(() => {
-    setData(spendInJanuary)
+    setFood(spendInJanuary)
   }, []);
 
   return {
-    data
+    food
   }
 };
