@@ -1,6 +1,7 @@
 import React, {FC, ReactElement} from "react";
 import {useFoodTable} from "./useFoodTable";
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
+import BodyRow from "./BodyRow";
 
 interface Props {
   classes: {
@@ -25,10 +26,11 @@ export const FoodTable: FC<Props> = ({classes}) => {
         <TableBody>
           {
             food.map((row): ReactElement =>
-              <TableRow key={row.day}>
-                <TableCell>{row.day}</TableCell>
-                <TableCell>{row.spend}</TableCell>
-              </TableRow>
+              <BodyRow
+                key={row.day}
+                day={row.day}
+                spend={row.spend}
+              />
             )
           }
         </TableBody>
