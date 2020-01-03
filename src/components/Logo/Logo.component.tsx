@@ -12,21 +12,18 @@ interface Props {
 
 const APP_NAME = 'Kabona';
 
-export const Logo: FC<Props> = ({classes}) => {
-  return (
-    <div className={classes.container}>
-      <AttachMoney
-        className={classes.icon}
-        color='secondary'
-      />
-      <Typography
-        className={classes.header}
-        variant='h3'
-        component='h1'
-        align='center'
-      >
-        {APP_NAME}
-      </Typography>
-    </div>
-  );
-};
+export const Logo: FC<Props> = ({classes}) =>
+  <div className={classes.container}>
+    <AttachMoney
+      className={classes.icon}
+      color='secondary'
+    />
+    <Typography
+      className={classes.header}
+      variant='h3'
+      component='h1'
+      align='center'
+    >
+      {APP_NAME}
+    </Typography>
+  </div>;
