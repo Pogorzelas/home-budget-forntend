@@ -1,4 +1,7 @@
-import combinedReducer from './reducer';
-import { createStore } from 'redux';
+import { createStore, combineReducers} from 'redux';
+import theme from './theme/reducer';
 
-export default createStore(combinedReducer);
+export default createStore(
+  combineReducers({
+    theme
+  }));
