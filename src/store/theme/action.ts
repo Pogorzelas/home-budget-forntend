@@ -1,18 +1,13 @@
 import {Action} from "../../interfaces/Action.interface";
-import {ThemeType} from "./types/ThemeType";
 
 export type ThemeAction =
-  | Action<'Theme.SetTheme', {
-    type: ThemeType
-  }>
+  | Action<'Theme.SetTheme'>
 
 export const themeActions = {
-  setTheme(type: ThemeType): ThemeAction {
+  setTheme(): ThemeAction {
     return {
       type: 'Theme.SetTheme',
-      payload: {
-        type
-      }
+      payload: undefined
     };
   },
 };

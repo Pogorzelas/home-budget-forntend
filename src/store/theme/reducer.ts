@@ -7,7 +7,7 @@ export default (state = initialState, action: ThemeAction): ThemeState => {
     case 'Theme.SetTheme':
       return {
         ...state,
-        type: action.payload.type
+        type: state.type === 'light' ? 'dark' : 'light'
       };
     default:
       return state;
