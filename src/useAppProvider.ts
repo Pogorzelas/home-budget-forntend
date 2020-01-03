@@ -7,6 +7,7 @@ interface Hook {
 }
 
 export const useAppProvider = (): Hook => {
+
   const theme = createMuiTheme({
     palette: {
       primary: teal,
@@ -14,6 +15,7 @@ export const useAppProvider = (): Hook => {
       type: 'light'
     }
   });
+
   return {
     theme
   };

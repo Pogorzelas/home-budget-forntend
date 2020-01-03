@@ -7,7 +7,7 @@ interface Props {
   }
 }
 
-const APP_NAME = 'Kabona ';
+const APP_NAME = 'Kabona';
 
 export const Header: FC<Props> = ({classes}) =>
   <AppBar position='static'>

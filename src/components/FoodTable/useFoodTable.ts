@@ -1,6 +1,6 @@
 import {SpendFood} from "../../interfaces/SpendFood.interface";
 import {useEffect, useState} from "react";
-import {spendInJanuary} from "../../temporary const/foods";
+import {spendInJanuary} from "../../mock/foods";
 
 interface Hook {
   food: SpendFood[];
