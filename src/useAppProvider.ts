@@ -1,5 +1,5 @@
 import {createMuiTheme} from "@material-ui/core";
-import {teal} from "@material-ui/core/colors";
+import {cyan, teal} from "@material-ui/core/colors";
 import {Theme} from "@material-ui/core/styles/createMuiTheme";
 
 interface Hook {
@@ -8,7 +8,8 @@ interface Hook {
 
 const theme = createMuiTheme({
   palette: {
-    primary: teal
+    primary: teal,
+    secondary: cyan
   }
 });
 
