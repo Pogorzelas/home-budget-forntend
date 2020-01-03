@@ -5,5 +5,5 @@ export interface ThemeState {
 }
 
 export const initialState: ThemeState = {
-  type: 'light',
+  type: 'dark',
 };

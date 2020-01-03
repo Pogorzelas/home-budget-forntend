@@ -3,9 +3,15 @@ import {AppBar, Toolbar} from "@material-ui/core";
 import Logo from "../../components/Logo";
 import ToggleTheme from "../../components/ToggleTheme";
 
-export const NavBar: FC = () =>
+interface Props {
+  classes: {
+    root: string;
+  }
+}
+
+export const NavBar: FC<Props> = ({classes}) =>
   <AppBar position='static'>
-    <Toolbar>
+    <Toolbar className={classes.root}>
       <Logo/>
       <ToggleTheme/>
     </Toolbar>

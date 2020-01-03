@@ -1,3 +1,10 @@
 import {NavBar} from "./NavBar.component";
+import {withStyles} from "@material-ui/core";
 
-export default NavBar;
+export default withStyles(() => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+}))(NavBar);
