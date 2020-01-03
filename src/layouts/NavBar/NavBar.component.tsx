@@ -7,14 +7,17 @@ import ToggleMenu from "../../components/ToggleMenu";
 interface Props {
   classes: {
     root: string;
+    menu: string;
   }
 }
 
 export const NavBar: FC<Props> = ({classes}) =>
   <AppBar position='static'>
     <Toolbar className={classes.root}>
-      <ToggleMenu/>
-      <Logo/>
+      <div className={classes.menu}>
+        <ToggleMenu/>
+        <Logo/>
+      </div>
       <ToggleTheme/>
     </Toolbar>
   </AppBar>;

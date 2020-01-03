@@ -6,7 +6,7 @@ import {useToggleMenu} from "./useToggleMenu";
 export const ToggleMenu: FC = () => {
   const {handleMenu} = useToggleMenu();
   return (
-    <IconButton onClick={handleMenu}>
+    <IconButton onClick={handleMenu} color='secondary'>
       <MenuIcon/>
     </IconButton>
   );

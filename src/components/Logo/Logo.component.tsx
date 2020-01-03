@@ -21,7 +21,7 @@ export const Logo: FC<Props> = ({classes}) => {
       />
       <Typography
         className={classes.header}
-        variant='h2'
+        variant='h3'
         component='h1'
         align='center'
       >
