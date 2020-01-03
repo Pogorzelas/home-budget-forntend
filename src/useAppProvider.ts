@@ -6,14 +6,14 @@ interface Hook {
   theme: Theme;
 }
 
-const theme = createMuiTheme({
-  palette: {
-    primary: teal,
-    secondary: cyan
-  }
-});
-
 export const useAppProvider = (): Hook => {
+  const theme = createMuiTheme({
+    palette: {
+      primary: teal,
+      secondary: cyan,
+      type: 'light'
+    }
+  });
   return {
     theme
   };
