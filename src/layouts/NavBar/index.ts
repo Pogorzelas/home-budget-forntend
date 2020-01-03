@@ -1,5 +1,5 @@
 import {withStyles} from "@material-ui/core";
-import {Header} from "./Header.component";
+import {NavBar} from "./NavBar.component";
 
 export default withStyles((theme) => ({
   root: {
@@ -8,4 +8,4 @@ export default withStyles((theme) => ({
       fontSize: 70
     }
   }
-}))(Header);
+}))(NavBar);

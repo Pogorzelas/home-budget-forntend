@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import Header from "./layouts/Header/index";
+import NavBar from "./layouts/NavBar/index";
 import {useAppProvider} from "./useAppProvider";
 import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
 import Content from './layouts/Content';
@@ -10,7 +10,7 @@ const App: FC = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline/>
-      <Header/>
+      <NavBar/>
       <Content/>
     </MuiThemeProvider>
   );
