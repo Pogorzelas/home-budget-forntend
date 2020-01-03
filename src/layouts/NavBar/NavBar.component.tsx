@@ -1,22 +1,10 @@
 import React, {FC} from "react";
-import {AppBar, Typography} from "@material-ui/core";
+import {AppBar, Toolbar} from "@material-ui/core";
+import Logo from "../../components/Logo";
 
-interface Props {
-  classes: {
-    root: string;
-  }
-}
-
-const APP_NAME = 'Kabona';
-
-export const NavBar: FC<Props> = ({classes}) =>
+export const NavBar: FC = () =>
   <AppBar position='static'>
-    <Typography
-      variant='h1'
-      component='h1'
-      align='center'
-      className={classes.root}
-    >
-      {APP_NAME}
-    </Typography>
+    <Toolbar>
+      <Logo/>
+    </Toolbar>
   </AppBar>;
