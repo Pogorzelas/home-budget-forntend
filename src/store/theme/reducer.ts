@@ -7,7 +7,7 @@ export default (state = initialState, action: ThemeAction): ThemeState => {
     case 'Theme.SetTheme':
       return {
         ...state,
-        themeType: action.payload.themeType
+        type: action.payload.type
       };
     default:
       return state;

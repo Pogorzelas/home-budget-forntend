@@ -10,12 +10,12 @@ interface Hook {
 
 interface State {
   theme: {
-    themeType: ThemeType;
+    type: ThemeType;
   }
 }
 
 export const useAppProvider = (): Hook => {
-  const themeType = useSelector((state: State): ThemeType => state.theme.themeType);
+  const themeType = useSelector((state: State): ThemeType => state.theme.type);
 
   const theme = createMuiTheme({
     palette: {

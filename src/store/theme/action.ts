@@ -3,15 +3,15 @@ import {ThemeType} from "./types/ThemeType";
 
 export type ThemeAction =
   | Action<'Theme.SetTheme', {
-    themeType: ThemeType
+    type: ThemeType
   }>
 
 export const themeActions = {
-  setTheme(themeType: ThemeType): ThemeAction {
+  setTheme(type: ThemeType): ThemeAction {
     return {
       type: 'Theme.SetTheme',
       payload: {
-        themeType
+        type
       }
     };
   },
