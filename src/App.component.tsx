@@ -4,18 +4,15 @@ import {useAppProvider} from "./useAppProvider";
 import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
 import Content from './layouts/Content';
 import {Provider} from 'react-redux';
-import store from './store';
 
 const App: FC = () => {
   const {theme} = useAppProvider();
   return (
-    <Provider store={store}>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline/>
-        <Header/>
-        <Content/>
-      </MuiThemeProvider>
-    </Provider>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline/>
+      <Header/>
+      <Content/>
+    </MuiThemeProvider>
   );
 };
 
