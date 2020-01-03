@@ -1,5 +1,5 @@
 import {createMuiTheme, PaletteType} from "@material-ui/core";
-import {red, teal} from "@material-ui/core/colors";
+import {deepOrange, orange} from "@material-ui/core/colors";
 import {Theme} from "@material-ui/core/styles/createMuiTheme";
 import {useSelector} from "react-redux";
 import {useMemo} from "react";
@@ -19,10 +19,8 @@ export const useAppProvider = (): Hook => {
 
   const theme = useMemo((): Theme => createMuiTheme({
     palette: {
-      primary: teal,
-      secondary: {
-        main: red[200]
-      },
+      primary: orange,
+      secondary: deepOrange,
       type: themeType
     }
   }), [themeType]);
