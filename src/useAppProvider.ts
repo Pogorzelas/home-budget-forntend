@@ -1,8 +1,7 @@
-import {createMuiTheme} from "@material-ui/core";
+import {createMuiTheme, PaletteType} from "@material-ui/core";
 import {red, teal} from "@material-ui/core/colors";
 import {Theme} from "@material-ui/core/styles/createMuiTheme";
 import {useSelector} from "react-redux";
-import {ThemeType} from "./store/theme/types/ThemeType";
 import {useMemo} from "react";
 
 interface Hook {
@@ -11,12 +10,12 @@ interface Hook {
 
 interface State {
   theme: {
-    type: ThemeType;
+    type: PaletteType;
   }
 }
 
 export const useAppProvider = (): Hook => {
-  const themeType = useSelector((state: State): ThemeType => state.theme.type);
+  const themeType = useSelector((state: State): PaletteType => state.theme.type);
 
   const theme = useMemo((): Theme => createMuiTheme({
     palette: {

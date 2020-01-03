@@ -1,5 +1,7 @@
+import {PaletteType} from "@material-ui/core";
+
 export interface ThemeState {
-  type: 'light' | 'dark';
+  type: PaletteType;
 }
 
 export const initialState: ThemeState = {
