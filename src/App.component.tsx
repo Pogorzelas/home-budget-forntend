@@ -4,6 +4,7 @@ import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
 import Content from './view/Content';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Layout from "./layouts";
+import Income from "./view/Income";
 
 const App: FC = () => {
   const {theme} = useAppProvider();
@@ -13,8 +14,8 @@ const App: FC = () => {
       <BrowserRouter>
         <Switch>
           <Layout>
-            <Route path='/' component={Content}/>
-            <Route path='/food' render={() => <div>food</div>}/>
+            <Route path='/' exact component={Content}/>
+            <Route path='/income' exact component={Income}/>
           </Layout>
         </Switch>
       </BrowserRouter>

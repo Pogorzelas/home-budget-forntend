@@ -4,6 +4,7 @@ import {useHistory} from "react-router";
 import {Home} from "@material-ui/icons";
 import {SideMenuOption} from "../../interfaces/SideMenuOption.interface";
 import {Pathname} from "../../enums/Pathname.enum";
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 interface Hook {
   isOpen: boolean;
@@ -36,6 +37,11 @@ export const useSideMenu = (): Hook => {
       name: 'home',
       icon: Home,
       onClick: handleLink(Pathname.Home),
+    },
+    {
+      name: 'income',
+      icon: MonetizationOnIcon,
+      onClick: handleLink(Pathname.Income)
     }
   ];
 
