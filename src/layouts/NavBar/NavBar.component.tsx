@@ -11,7 +11,7 @@ interface Props {
   }
 }
 
-export const NavBar: FC<Props> = ({classes}) =>
+const NavBar: FC<Props> = ({classes}) =>
   <AppBar position='static'>
     <Toolbar className={classes.root}>
       <div className={classes.menu}>
@@ -21,3 +21,5 @@ export const NavBar: FC<Props> = ({classes}) =>
       <ToggleTheme/>
     </Toolbar>
   </AppBar>;
+
+export default NavBar;

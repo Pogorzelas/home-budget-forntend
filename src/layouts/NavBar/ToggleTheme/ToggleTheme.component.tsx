@@ -9,7 +9,7 @@ interface Props {
   }
 }
 
-export const ToggleTheme: FC<Props> = ({classes}) => {
+const ToggleTheme: FC<Props> = ({classes}) => {
   const {handleTheme} = useToggleTheme();
   return (
     <IconButton onClick={handleTheme} className={classes.root}>
@@ -17,3 +17,5 @@ export const ToggleTheme: FC<Props> = ({classes}) => {
     </IconButton>
   );
 };
+
+export default ToggleTheme;

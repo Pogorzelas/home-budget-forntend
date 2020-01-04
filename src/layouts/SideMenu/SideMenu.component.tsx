@@ -4,7 +4,7 @@ import {useSideMenu} from "./useSideMenu";
 import Option from "./Option";
 import {navigationList} from "../../const/navigationList";
 
-export const SideMenu: FC = () => {
+const SideMenu: FC = () => {
   const {isOpen, handleClose, handleLink} = useSideMenu();
   return (
     <Drawer open={isOpen} onClose={handleClose}>
@@ -21,3 +21,5 @@ export const SideMenu: FC = () => {
     </Drawer>
   );
 };
+
+export default SideMenu;

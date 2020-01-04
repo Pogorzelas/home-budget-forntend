@@ -3,7 +3,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import React, {FC} from "react";
 import {useToggleMenu} from "./useToggleMenu";
 
-export const ToggleMenu: FC = () => {
+const ToggleMenu: FC = () => {
   const {handleMenu} = useToggleMenu();
   return (
     <IconButton onClick={handleMenu} color='secondary'>
@@ -11,3 +11,5 @@ export const ToggleMenu: FC = () => {
     </IconButton>
   );
 };
+
+export default ToggleMenu;

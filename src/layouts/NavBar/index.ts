@@ -1,4 +1,4 @@
-import {NavBar} from "./NavBar.component";
+import NavBar from "./NavBar.component";
 import {withStyles} from "@material-ui/core";
 
 export default withStyles((theme) => ({

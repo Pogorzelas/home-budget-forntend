@@ -12,7 +12,7 @@ interface Props {
 
 const APP_NAME = 'Kabona';
 
-export const Logo: FC<Props> = ({classes}) =>
+const Logo: FC<Props> = ({classes}) =>
   <div className={classes.container}>
     <AttachMoney
       className={classes.icon}
@@ -27,3 +27,5 @@ export const Logo: FC<Props> = ({classes}) =>
       {APP_NAME}
     </Typography>
   </div>;
+
+export default Logo;

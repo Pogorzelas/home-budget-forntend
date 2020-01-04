@@ -4,7 +4,7 @@ import {SpendFood} from "../../../interfaces/SpendFood.interface";
 
 interface Props extends SpendFood {}
 
-export const BodyRow: FC<Props> = ({day, spend}) => {
+const BodyRow: FC<Props> = ({day, spend}) => {
   return (
     <TableRow>
       <TableCell>{day}</TableCell>
@@ -12,3 +12,5 @@ export const BodyRow: FC<Props> = ({day, spend}) => {
     </TableRow>
   );
 };
+
+export default BodyRow;

@@ -6,7 +6,7 @@ interface Props {
   children: ReactElement[];
 }
 
-export const Layout: FC<Props> = ({children}) =>
+const Layout: FC<Props> = ({children}) =>
   <Fragment>
     <NavBar/>
     {
@@ -14,3 +14,5 @@ export const Layout: FC<Props> = ({children}) =>
     }
     <SideMenu/>
   </Fragment>;
+
+export default Layout;

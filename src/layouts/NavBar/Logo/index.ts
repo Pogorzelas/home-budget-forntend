@@ -1,4 +1,4 @@
-import {Logo} from "./Logo.component";
+import Logo from "./Logo.component";
 import {withStyles} from "@material-ui/core";
 
 export default withStyles((theme) => ({

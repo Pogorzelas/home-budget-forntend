@@ -12,7 +12,7 @@ interface Props {
 const DAY = 'dzień';
 const SPEND = 'wydatek';
 
-export const FoodTable: FC<Props> = ({classes}) => {
+const FoodTable: FC<Props> = ({classes}) => {
   const {food} = useFoodTable();
   return (
     <TableContainer component={Paper} className={classes.root}>
@@ -38,3 +38,5 @@ export const FoodTable: FC<Props> = ({classes}) => {
     </TableContainer>
   )
 };
+
+export default FoodTable;

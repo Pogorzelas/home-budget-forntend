@@ -1,3 +1,3 @@
-import {SideMenu} from "./SideMenu.component";
+import SideMenu from "./SideMenu.component";
 
 export default SideMenu;

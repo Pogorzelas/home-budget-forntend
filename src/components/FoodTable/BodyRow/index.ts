@@ -1,3 +1,3 @@
-import {BodyRow} from "./BodyRow.component";
+import BodyRow from "./BodyRow.component";
 
 export default BodyRow;

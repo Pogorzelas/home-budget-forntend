@@ -1,3 +1,3 @@
-import {ToggleMenu} from "./ToggleMenu.component";
+import ToggleMenu from "./ToggleMenu.component";
 
 export default ToggleMenu;
