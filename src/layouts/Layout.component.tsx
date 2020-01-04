@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import SideMenu from "./SideMenu";
 
 interface Props {
-  children: ReactElement;
+  children: ReactElement[];
 }
 
 export const Layout: FC<Props> = ({children}) =>
