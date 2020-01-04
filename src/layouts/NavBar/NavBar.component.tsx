@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import {AppBar, Toolbar} from "@material-ui/core";
-import Logo from "../../components/Logo";
-import ToggleTheme from "../../components/ToggleTheme";
-import ToggleMenu from "../../components/ToggleMenu";
+import Logo from "./Logo";
+import ToggleTheme from "./ToggleTheme";
+import ToggleMenu from "./ToggleMenu";
 
 interface Props {
   classes: {

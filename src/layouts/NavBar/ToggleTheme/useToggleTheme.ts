@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {themeActions} from "../../store/theme/action";
+import {themeActions} from "../../../store/theme/action";
 
 interface Hook {
   handleTheme: VoidFunction;
