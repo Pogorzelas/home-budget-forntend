@@ -1,15 +1,12 @@
 import {useDispatch, useSelector} from "react-redux";
 import {dialogActions} from "../../store/dialog/action";
 import {useHistory} from "react-router";
-import {Home} from "@material-ui/icons";
-import {SideMenuOption} from "../../interfaces/SideMenuOption.interface";
 import {Pathname} from "../../enums/Pathname.enum";
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 interface Hook {
   isOpen: boolean;
-  list: SideMenuOption[];
   handleClose: VoidFunction;
+  handleLink: (path: Pathname) => VoidFunction;
 }
 
 interface State {
@@ -32,22 +29,9 @@ export const useSideMenu = (): Hook => {
     history.push(path);
   };
 
-  const list: SideMenuOption[] = [
-    {
-      name: 'home',
-      icon: Home,
-      onClick: handleLink(Pathname.Home),
-    },
-    {
-      name: 'income',
-      icon: MonetizationOnIcon,
-      onClick: handleLink(Pathname.Income)
-    }
-  ];
-
   return {
     isOpen,
-    list,
-    handleClose
+    handleClose,
+    handleLink
   }
 };

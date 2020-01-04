@@ -2,18 +2,19 @@ import React, {FC, ReactElement} from "react";
 import {Drawer} from "@material-ui/core";
 import {useSideMenu} from "./useSideMenu";
 import Option from "./Option";
+import {navigationList} from "../../const/navigationList";
 
 export const SideMenu: FC = () => {
-  const {isOpen, list, handleClose} = useSideMenu();
+  const {isOpen, handleClose, handleLink} = useSideMenu();
   return (
     <Drawer open={isOpen} onClose={handleClose}>
       {
-        list.map((option): ReactElement =>
+        navigationList.map((option): ReactElement =>
           <Option
-            key={option.name}
+            key={option.path}
             name={option.name}
             Icon={option.icon}
-            onClick={option.onClick}
+            onClick={handleLink(option.path)}
           />
         )
       }
