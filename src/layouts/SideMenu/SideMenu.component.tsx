@@ -11,6 +11,7 @@ export const SideMenu: FC = () => {
         list.map((option): ReactElement =>
           <Option
             key={option.name}
+            name={option.name}
             Icon={option.icon}
             onClick={option.onClick}
           />
