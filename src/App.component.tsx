@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {useAppProvider} from "./useAppProvider";
 import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
-import Content from './layouts/Content';
+import Content from './view/Content';
 import {BrowserRouter, Route} from "react-router-dom";
 import Layout from "./layouts";
 
