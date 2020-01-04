@@ -1,11 +1,14 @@
 import {useDispatch, useSelector} from "react-redux";
 import {dialogActions} from "../../store/dialog/action";
 import {useHistory} from "react-router";
+import {Home} from "@material-ui/icons";
+import {SideMenuOption} from "../../interfaces/SideMenuOption.interface";
+import {Pathname} from "../../enums/Pathname.enum";
 
 interface Hook {
   isOpen: boolean;
+  list: SideMenuOption[];
   handleClose: VoidFunction;
-  handleLink: (path: string) => void;
 }
 
 interface State {
@@ -23,14 +26,22 @@ export const useSideMenu = (): Hook => {
     dispatch(dialogActions.toggleMenu());
   };
 
-  const handleLink = (path: string): void => {
+  const handleLink = (path: Pathname): VoidFunction => (): void => {
     handleClose();
     history.push(path);
   };
 
+  const list: SideMenuOption[] = [
+    {
+      name: 'home',
+      icon: Home,
+      onClick: handleLink(Pathname.Home),
+    }
+  ];
+
   return {
     isOpen,
-    handleClose,
-    handleLink
+    list,
+    handleClose
   }
 };
