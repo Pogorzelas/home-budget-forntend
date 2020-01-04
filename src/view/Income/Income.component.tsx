@@ -1,9 +1,7 @@
 import React, {FC} from "react";
+import IncomeTable from "../../components/IncomeTable";
 
-const Income: FC = () => {
-  return (
-    <div></div>
-  )
-};
+const Income: FC = () =>
+  <IncomeTable/>;
 
 export default Income;
