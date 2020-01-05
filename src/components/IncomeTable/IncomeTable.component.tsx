@@ -2,12 +2,17 @@ import React, {FC, ReactElement} from "react";
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 import {useIncomeTable} from "./useIncomeTable";
 import Row from "./Row";
+import {Income} from "../../interfaces/Income.interface";
 
-const SOURCE = 'źródło';
 const AMOUNT = 'ilość';
+const SOURCE = 'źródło';
 
-const IncomeTable: FC = () => {
-  const {income} = useIncomeTable();
+interface Props {
+  list: Income[]
+}
+
+const IncomeTable: FC<Props> = ({list}) => {
+  const {income} = useIncomeTable(list);
   return (
     <TableContainer component={Paper}>
       <Table>

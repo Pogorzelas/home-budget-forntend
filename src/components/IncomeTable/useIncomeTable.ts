@@ -1,13 +1,8 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Income} from "../../interfaces/Income.interface";
-import {income as initialIncome} from "../../mock/income";
 
-export const useIncomeTable = () => {
-  const [income, setIncome] = useState([] as Income[]);
-
-  useEffect((): void => {
-    setIncome(initialIncome);
-  }, []);
+export const useIncomeTable = (list: Income[]) => {
+  const [income, setIncome] = useState(list);
 
   return {
     income
