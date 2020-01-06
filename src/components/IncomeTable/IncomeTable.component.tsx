@@ -5,6 +5,7 @@ import {Income} from "../../interfaces/Income.interface";
 
 const AMOUNT = 'ilość';
 const SOURCE = 'źródło';
+const OPTIONS = 'opcje';
 
 interface Props {
   list: Income[]
@@ -21,13 +22,16 @@ const IncomeTable: FC<Props> = ({list}) =>
           <TableCell>
             {AMOUNT}
           </TableCell>
+          <TableCell>
+            {OPTIONS}
+          </TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {
           list.map((row): ReactElement =>
             <Row
-              key={row.source}
+              key={row._id}
               source={row.source}
               amount={row.amount}
             />
