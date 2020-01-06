@@ -3,10 +3,10 @@ import IncomeTable from "../IncomeTable/IncomeTable.component";
 import {useIncomeManager} from "./useIncomeManager";
 
 const IncomeManager: FC = () => {
-  const {income} = useIncomeManager();
+  const {list} = useIncomeManager();
   return (
     <Fragment>
-      <IncomeTable list={income}/>
+      <IncomeTable list={list}/>
     </Fragment>
   )
 };

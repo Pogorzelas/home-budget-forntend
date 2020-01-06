@@ -7,10 +7,14 @@ interface State {
   }
 }
 
-export const useIncomeManager = () => {
-  const income = useSelector((state: State): Income[] => state.income.list);
+interface Hook {
+  list: Income[]
+}
+
+export const useIncomeManager = (): Hook => {
+  const list = useSelector((state: State): Income[] => state.income.list);
 
   return {
-    income
+    list
   }
 };
