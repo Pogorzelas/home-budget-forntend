@@ -1,7 +1,6 @@
 import React, {FC} from "react";
-import IncomeTable from "../../components/IncomeTable";
-import {income} from "../../mock/income";
+import IncomeManager from "../../components/IncomeManager";
 
-const Income: FC = () => <IncomeTable list={income}/>;
+const Income: FC = () => <IncomeManager/>;
 
 export default Income;
