@@ -4,8 +4,8 @@ import {Income} from "../interfaces/Income.interface";
 const URL = `${process.env.REACT_APP_API}/incomes`;
 const api = ky.create({prefixUrl: URL});
 
-const getIncome = () => api.get('').json();
-const createIncome = (incomeData: Income) => {
+const getIncome = (): Promise<Income[]> => api.get('').json();
+const createIncome = (incomeData: Income): Promise<Income[]> => {
 
   const option = {
     json: {
