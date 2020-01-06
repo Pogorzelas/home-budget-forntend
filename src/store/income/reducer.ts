@@ -6,7 +6,7 @@ export default (state = initialState, action: IncomeAction): IncomeState => {
     case 'Income.SetIncome':
       return {
         ...state,
-        income: action.payload.income
+        list: action.payload.list
       };
     default:
       return state

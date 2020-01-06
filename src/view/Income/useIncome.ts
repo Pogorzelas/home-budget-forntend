@@ -5,10 +5,20 @@ import {useDispatch} from "react-redux";
 
 export const useIncome = (): void => {
   const dispatch = useDispatch();
-  useEffect((): void => {
+
+  useEffect((): VoidFunction => {
+    let isSubscribe = true;
+
     getIncome()
       .then((data) => {
-        dispatch(IncomeActions.setIncome(data));
+        if (isSubscribe) {
+          dispatch(IncomeActions.setIncome(data));
+        }
       });
+
+    return (): void => {
+      isSubscribe = false;
+    }
   }, []);
+
 };
