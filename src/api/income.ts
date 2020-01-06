@@ -7,13 +7,13 @@ const api = ky.create({prefixUrl: URL});
 const getIncome = () => api.get('').json();
 const createIncome = (incomeData: Income) => {
 
-  const json = {
+  const option = {
     json: {
       ...incomeData,
     }
   };
 
-  return api.post('', json).json();
+  return api.post('', option).json();
 };
 
 export {
