@@ -5,11 +5,12 @@ import SourceInput from "./SourceInput";
 import DeleteButton from "./DeleteButton";
 
 interface Props {
+  _id: string;
   source: string;
   amount: number;
 }
 
-const Row: FC<Props> = ({source, amount}) =>
+const Row: FC<Props> = ({source, amount, _id}) =>
   <TableRow>
     <TableCell>
       <SourceInput source={source}/>

@@ -32,6 +32,7 @@ const IncomeTable: FC<Props> = ({list}) =>
           list.map((row): ReactElement =>
             <Row
               key={row._id}
+              _id={row._id}
               source={row.source}
               amount={row.amount}
             />
