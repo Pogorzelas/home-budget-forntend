@@ -6,7 +6,6 @@ const IncomeManager: FC = () => {
   return (
     <Fragment>
       <IncomeTable list={income}/>
-      <IncomeTable list={income}/>
     </Fragment>
   )
 };
