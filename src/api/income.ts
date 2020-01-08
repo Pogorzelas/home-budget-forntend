@@ -7,16 +7,16 @@ const URL = 'incomes';
 const getIncome = (): Promise<Income[]> => api.get(URL).json();
 
 const createIncome = (incomeData: Income): Promise<Income[]> => {
-  const option = {
+  const options = {
     json: {
       ...incomeData,
     }
   };
-  return api.post(URL, option).json();
+  return api.post(URL, options).json();
 };
 
 const updateIncome = (id: string, incomeToUpdate: Partial<Income>) => {
-  const option = {
+  const options = {
     json: {
       ...incomeToUpdate,
     },
@@ -24,11 +24,21 @@ const updateIncome = (id: string, incomeToUpdate: Partial<Income>) => {
       id
     }
   };
-  return api.patch(URL, option).json();
+  return api.patch(URL, options).json();
+};
+
+const deleteIncome = (id: string) => {
+  const options = {
+    searchParams: {
+      id
+    }
+  };
+  return api.delete(URL, options).json();
 };
 
 export {
   getIncome,
   createIncome,
-  updateIncome
+  updateIncome,
+  deleteIncome
 }

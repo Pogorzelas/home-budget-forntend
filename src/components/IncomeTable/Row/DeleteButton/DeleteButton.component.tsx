@@ -2,10 +2,13 @@ import React, {FC} from "react";
 import {Delete} from "@material-ui/icons";
 import {IconButton} from "@material-ui/core";
 
-const DeleteButton: FC = () => {
+interface Props {
+  onClick: VoidFunction;
+}
 
+const DeleteButton: FC<Props> = ({onClick}) => {
   return (
-    <IconButton>
+    <IconButton onClick={onClick}>
       <Delete color='error'/>
     </IconButton>
   )
