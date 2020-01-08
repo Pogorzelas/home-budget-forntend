@@ -1,10 +1,10 @@
 import ky from 'ky';
 import {Income} from "../interfaces/Income.interface";
 
-const URL = `${process.env.REACT_APP_API}/incomes`;
-const api = ky.create({prefixUrl: URL});
+const api = ky.create({prefixUrl: process.env.REACT_APP_API});
+const URL = 'incomes';
 
-const getIncome = (): Promise<Income[]> => api.get('').json();
+const getIncome = (): Promise<Income[]> => api.get(URL).json();
 
 const createIncome = (incomeData: Income): Promise<Income[]> => {
   const option = {
@@ -12,18 +12,19 @@ const createIncome = (incomeData: Income): Promise<Income[]> => {
       ...incomeData,
     }
   };
-  return api.post('', option).json();
+  return api.post(URL, option).json();
 };
 
-const updateIncome = (id: string, incomeToUpdate: Partial<Income>): Promise<void> => {
+const updateIncome = (id: string, incomeToUpdate: Partial<Income>) => {
   const option = {
     json: {
-      _id: id,
       ...incomeToUpdate,
     },
-    //searchParams: id
+    searchParams: {
+      id
+    }
   };
-  return api.patch('', option).json();
+  return api.patch(URL, option).json();
 };
 
 export {

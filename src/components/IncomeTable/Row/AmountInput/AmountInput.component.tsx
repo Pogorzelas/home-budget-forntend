@@ -8,8 +8,8 @@ interface Props {
   _id: string;
 }
 
-const AmountInput: FC<Props> = (props) => {
-  const {value, handleChange, updateAmount} = useAmountInput(props);
+const AmountInput: FC<Props> = ({_id, amount}) => {
+  const {value, handleChange, updateAmount} = useAmountInput(_id, amount);
   return (
     <NumberFormat
       value={value}

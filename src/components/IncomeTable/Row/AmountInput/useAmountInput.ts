@@ -8,7 +8,7 @@ interface Hook {
   updateAmount: VoidFunction;
 }
 
-export const useAmountInput = ({amount, _id}: {amount: number, _id: string}): Hook => {
+export const useAmountInput = (_id: string, amount: number): Hook => {
   const [value, setValue] = useState(amount);
 
   const handleChange = (values: NumberFormatValues): void => {
