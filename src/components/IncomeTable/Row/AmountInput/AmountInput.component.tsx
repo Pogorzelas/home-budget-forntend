@@ -5,15 +5,17 @@ import {useAmountInput} from "./useAmountInput";
 
 interface Props {
   amount: number;
+  _id: string;
 }
 
-const AmountInput: FC<Props> = ({amount}) => {
-  const {value, handleChange} = useAmountInput(amount);
+const AmountInput: FC<Props> = (props) => {
+  const {value, handleChange, updateAmount} = useAmountInput(props);
   return (
     <NumberFormat
       value={value}
       customInput={Input}
       onValueChange={handleChange}
+      onBlur={updateAmount}
       suffix={' zł'}
     />
   )

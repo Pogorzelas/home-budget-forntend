@@ -13,10 +13,10 @@ interface Props {
 const Row: FC<Props> = ({source, amount, _id}) =>
   <TableRow>
     <TableCell>
-      <SourceInput source={source}/>
+      <SourceInput source={source} _id={_id}/>
     </TableCell>
     <TableCell>
-      <AmountInput amount={amount}/>
+      <AmountInput amount={amount} _id={_id}/>
     </TableCell>
     <TableCell>
       <DeleteButton/>

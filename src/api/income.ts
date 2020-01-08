@@ -15,11 +15,13 @@ const createIncome = (incomeData: Income): Promise<Income[]> => {
   return api.post('', option).json();
 };
 
-const updateIncome = (incomeToUpdate: Income): Promise<void> => {
+const updateIncome = (id: string, incomeToUpdate: Partial<Income>): Promise<void> => {
   const option = {
     json: {
+      _id: id,
       ...incomeToUpdate,
-    }
+    },
+    //searchParams: id
   };
   return api.patch('', option).json();
 };
