@@ -15,7 +15,7 @@ const createIncome = (incomeData: Income): Promise<Income[]> => {
   return api.post(URL, options).json();
 };
 
-const updateIncome = (id: string, incomeToUpdate: Partial<Income>) => {
+const updateIncome = (id: string, incomeToUpdate: Partial<Income>): Promise<void> => {
   const options = {
     json: {
       ...incomeToUpdate,
@@ -27,7 +27,7 @@ const updateIncome = (id: string, incomeToUpdate: Partial<Income>) => {
   return api.patch(URL, options).json();
 };
 
-const deleteIncome = (id: string) => {
+const deleteIncome = (id: string): Promise<void> => {
   const options = {
     searchParams: {
       id
