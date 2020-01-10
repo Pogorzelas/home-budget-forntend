@@ -1,4 +1,6 @@
 import {deleteIncome, updateIncome} from "../../../../api/income";
+import {useDispatch} from "react-redux";
+import {IncomeActions} from "../../../../store/income/action";
 
 interface Hook {
   handleDelete: VoidFunction;
@@ -6,9 +8,11 @@ interface Hook {
 }
 
 export const useRow = (_id: string): Hook => {
-
+  const dispatch = useDispatch();
   const handleDelete = (): void => {
-      deleteIncome(_id)
+      deleteIncome(_id).then((list) => {
+        dispatch(IncomeActions.setIncome(list));
+      })
     };
 
   const handleUpdate = (value: {amount?: number; source?: string}): VoidFunction =>

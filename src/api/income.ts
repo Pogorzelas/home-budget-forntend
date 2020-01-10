@@ -24,7 +24,7 @@ const updateIncome = (id: string, incomeToUpdate: Partial<Income>): Promise<void
   return api.patch(`${URL}/${id}`, options).json();
 };
 
-const deleteIncome = (id: string): Promise<void> => api.delete(`${URL}/${id}`).json();
+const deleteIncome = (id: string): Promise<Income[]> => api.delete(`${URL}/${id}`).json();
 
 export {
   getIncome,
