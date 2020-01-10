@@ -19,22 +19,12 @@ const updateIncome = (id: string, incomeToUpdate: Partial<Income>): Promise<void
   const options = {
     json: {
       ...incomeToUpdate,
-    },
-    searchParams: {
-      id
     }
   };
-  return api.patch(URL, options).json();
+  return api.patch(`${URL}/${id}`, options).json();
 };
 
-const deleteIncome = (id: string): Promise<void> => {
-  const options = {
-    searchParams: {
-      id
-    }
-  };
-  return api.delete(URL, options).json();
-};
+const deleteIncome = (id: string): Promise<void> => api.delete(`${URL}/${id}`).json();
 
 export {
   getIncome,
