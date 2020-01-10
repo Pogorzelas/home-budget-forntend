@@ -5,17 +5,17 @@ import {useAmountInput} from "./useAmountInput";
 
 interface Props {
   amount: number;
-  _id: string;
+  onBlur: (value: {amount: number}) => VoidFunction;
 }
 
-const AmountInput: FC<Props> = ({_id, amount}) => {
-  const {value, handleChange, updateAmount} = useAmountInput(_id, amount);
+const AmountInput: FC<Props> = ({amount, onBlur}) => {
+  const {value, handleChange} = useAmountInput(amount);
   return (
     <NumberFormat
       value={value}
       customInput={Input}
       onValueChange={handleChange}
-      onBlur={updateAmount}
+      onBlur={onBlur({amount: value})}
       suffix={' zł'}
     />
   )

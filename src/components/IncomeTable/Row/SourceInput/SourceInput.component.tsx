@@ -4,16 +4,16 @@ import {useSourceInput} from "./useSourceInput";
 
 interface Props {
   source: string;
-  _id: string;
+  onBlur: (value: {source: string}) => VoidFunction;
 }
 
-const SourceInput: FC<Props> = ({source, _id}) => {
-  const {value, handleChange, updateSource} = useSourceInput(source, _id);
+const SourceInput: FC<Props> = ({source, onBlur}) => {
+  const {value, handleChange} = useSourceInput(source);
   return (
     <Input
       value={value}
       onChange={handleChange}
-      onBlur={updateSource}
+      onBlur={onBlur({source: value})}
     />
   )
 };
