@@ -9,11 +9,14 @@ interface Hook {
 
 export const useRow = (_id: string): Hook => {
   const dispatch = useDispatch();
+
   const handleDelete = (): void => {
-      deleteIncome(_id).then((list) => {
-        dispatch(IncomeActions.setIncome(list));
+    deleteIncome(_id)
+      .then((list) => {
+        dispatch(IncomeActions.setIncome(list))
       })
-    };
+      .catch((error) => {});
+  };
 
   const handleUpdate = (value: {amount?: number; source?: string}): VoidFunction =>
     (): void => {
