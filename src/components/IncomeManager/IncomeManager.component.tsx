@@ -1,5 +1,5 @@
 import React, {FC, Fragment} from "react";
-import IncomeTable from "../IncomeTable/IncomeTable.component";
+import IncomeTable from "../IncomeTable";
 import {useIncomeManager} from "./useIncomeManager";
 
 const IncomeManager: FC = () => {
