@@ -19,6 +19,7 @@ const IncomeTable: FC<Props> = ({list}) =>
           <TableCell>{SOURCE}</TableCell>
           <TableCell>{AMOUNT}</TableCell>
           <TableCell>{OPTIONS}</TableCell>
+          <TableCell/>
         </TableRow>
       </TableHead>
       <TableBody>

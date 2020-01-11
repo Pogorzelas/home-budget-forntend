@@ -1,3 +1,8 @@
 import Row from './Row.component';
+import {withStyles} from "@material-ui/core";
 
-export default Row;
+export default withStyles(() => ({
+  hidden : {
+    visibility: 'hidden'
+  }
+}))(Row);
