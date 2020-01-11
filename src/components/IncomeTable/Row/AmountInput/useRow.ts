@@ -1,6 +1,7 @@
 import {deleteIncome, updateIncome} from "../../../../api/income";
 import {useDispatch} from "react-redux";
 import {IncomeActions} from "../../../../store/income/action";
+import {dialogActions} from "../../../../store/dialog/action";
 import {useState} from "react";
 
 interface Hook {
@@ -16,8 +17,14 @@ export const useRow = (_id: string): Hook => {
   const handleDelete = (): void => {
     setIsLoading(true);
     deleteIncome(_id)
-      .then((list) => dispatch(IncomeActions.setIncome(list)))
-      .catch(() => setIsLoading(false));
+      .then((list) => {
+        dispatch(dialogActions.snackBar({type: 'success', massage: 'udalo sie'}));
+        dispatch(IncomeActions.setIncome(list))
+      })
+      .catch(() => {
+        dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'}));
+        setIsLoading(false)
+      });
   };
 
   const handleUpdate = (value: {amount?: number; source?: string}): VoidFunction =>

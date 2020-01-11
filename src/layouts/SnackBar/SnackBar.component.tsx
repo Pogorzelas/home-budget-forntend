@@ -7,7 +7,7 @@ import {SnackbarOrigin} from "@material-ui/core/Snackbar/Snackbar";
 const TOP_RIGHT_CORNER: SnackbarOrigin = { vertical: 'top', horizontal: 'right'};
 
 const SnackBar: FC = () => {
-  const {isOpen, timeOut, handleClose, type, massage} = useSnackBar();
+  const {isOpen, timeOut = 3000, handleClose, type, massage} = useSnackBar();
   return (
     <Snackbar
       open={isOpen}
@@ -16,7 +16,6 @@ const SnackBar: FC = () => {
       anchorOrigin={TOP_RIGHT_CORNER}
     >
       <MuiAlert
-        onClose={handleClose}
         severity={type}
         elevation={6}
         variant="filled"

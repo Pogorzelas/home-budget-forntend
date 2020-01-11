@@ -8,6 +8,11 @@ export default (state = initialState, action: DialogAction): DialogState => {
         ...state,
         isSideMenuOpened: !state.isSideMenuOpened
       };
+    case 'Dialog.TriggerSnackBar':
+      return {
+        ...state,
+        snackBar: action.payload.snackBar
+      };
     default:
       return state
   }

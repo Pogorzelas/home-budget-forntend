@@ -1,7 +1,7 @@
 import {Color} from "@material-ui/lab/Alert/Alert";
 
-export interface AlertProps {
-  timeOut: number;
+export interface SnackBarProps {
+  timeOut?: number;
   type: Color;
   massage: string;
 }
