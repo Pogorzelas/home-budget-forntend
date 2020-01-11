@@ -19,7 +19,7 @@ const Row: FC<Props> = ({_id, source, amount, classes}) => {
   return (
     <TableRow>
       <TableCell><SourceInput source={source} _id={_id}/></TableCell>
-      <TableCell><AmountInput amount={amount} onBlur={handleUpdate}/></TableCell>
+      <TableCell><AmountInput amount={amount} _id={_id}/></TableCell>
       <TableCell><DeleteButton onClick={handleDelete}/></TableCell>
       <TableCell><CircularProgress className={isLoading ? '' : classes.hidden} /></TableCell>
     </TableRow>
