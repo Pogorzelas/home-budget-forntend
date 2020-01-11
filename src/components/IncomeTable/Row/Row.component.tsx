@@ -18,7 +18,7 @@ const Row: FC<Props> = ({_id, source, amount, classes}) => {
   const {isLoading, handleDelete, handleUpdate} = useRow(_id);
   return (
     <TableRow>
-      <TableCell><SourceInput source={source} onBlur={handleUpdate}/></TableCell>
+      <TableCell><SourceInput source={source} _id={_id}/></TableCell>
       <TableCell><AmountInput amount={amount} onBlur={handleUpdate}/></TableCell>
       <TableCell><DeleteButton onClick={handleDelete}/></TableCell>
       <TableCell><CircularProgress className={isLoading ? '' : classes.hidden} /></TableCell>

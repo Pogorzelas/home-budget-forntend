@@ -3,17 +3,17 @@ import React, {FC} from "react";
 import {useSourceInput} from "./useSourceInput";
 
 interface Props {
+  _id: string;
   source: string;
-  onBlur: (value: {source: string}) => VoidFunction;
 }
 
-const SourceInput: FC<Props> = ({source, onBlur}) => {
-  const {value, handleChange} = useSourceInput(source);
+const SourceInput: FC<Props> = ({source, _id}) => {
+  const {value, handleChange, handleUpdate} = useSourceInput(source, _id);
   return (
     <Input
       value={value}
       onChange={handleChange}
-      onBlur={onBlur({source: value})}
+      onBlur={handleUpdate}
     />
   )
 };
