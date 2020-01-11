@@ -16,10 +16,19 @@ const DeleteButton: FC<Props> = ({_id, classes}) => {
   const {isLoading, handleDelete} = useDeleteButton(_id);
   return (
     <div className={classes.wrapper}>
-      <IconButton onClick={handleDelete} className={isLoading ? classes.loadingIcon : ''}>
+      <IconButton
+        onClick={handleDelete}
+        className={isLoading ? classes.loadingIcon : ''}
+      >
         <Delete color='error'/>
       </IconButton>
-      {isLoading && <CircularProgress size={48} className={classes.loader}/>}
+      {
+        isLoading &&
+          <CircularProgress
+            size={48}
+            className={classes.loader}
+          />
+      }
     </div>
   )
 };
