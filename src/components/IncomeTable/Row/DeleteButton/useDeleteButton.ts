@@ -1,18 +1,17 @@
-import {deleteIncome, updateIncome} from "../../../../api/income";
-import {useDispatch} from "react-redux";
-import {IncomeActions} from "../../../../store/income/action";
 import {dialogActions} from "../../../../store/dialog/action";
+import {IncomeActions} from "../../../../store/income/action";
+import {deleteIncome} from "../../../../api/income";
+import {useDispatch} from "react-redux";
 import {useState} from "react";
 
 interface Hook {
   isLoading: boolean;
   handleDelete: VoidFunction;
-  handleUpdate: (value: {amount?: number; source?: string}) => VoidFunction;
 }
 
-export const useRow = (_id: string): Hook => {
-  const [isLoading, setIsLoading] = useState(false);
+export const useDeleteButton = (_id: string): Hook => {
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleDelete = (): void => {
     setIsLoading(true);
@@ -27,14 +26,8 @@ export const useRow = (_id: string): Hook => {
       });
   };
 
-  const handleUpdate = (value: {amount?: number; source?: string}): VoidFunction =>
-    (): void => {
-      updateIncome(_id, value);
-    };
-
   return {
     isLoading,
-    handleDelete,
-    handleUpdate
+    handleDelete
   }
 };

@@ -1,16 +1,26 @@
 import React, {FC} from "react";
 import {Delete} from "@material-ui/icons";
-import {IconButton} from "@material-ui/core";
+import {CircularProgress, IconButton} from "@material-ui/core";
+import {useDeleteButton} from "./useDeleteButton";
 
 interface Props {
-  onClick: VoidFunction;
+  _id: string;
+  classes: {
+    wrapper: string;
+    loader: string;
+    loadingIcon: string;
+  }
 }
 
-const DeleteButton: FC<Props> = ({onClick}) => {
+const DeleteButton: FC<Props> = ({_id, classes}) => {
+  const {isLoading, handleDelete} = useDeleteButton(_id);
   return (
-    <IconButton onClick={onClick}>
-      <Delete color='error'/>
-    </IconButton>
+    <div className={classes.wrapper}>
+      <IconButton onClick={handleDelete} className={isLoading ? classes.loadingIcon : ''}>
+        <Delete color='error'/>
+      </IconButton>
+      {isLoading && <CircularProgress size={48} className={classes.loader}/>}
+    </div>
   )
 };
 
