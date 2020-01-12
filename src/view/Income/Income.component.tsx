@@ -5,7 +5,7 @@ import Loader from "../../components/Loader";
 
 const Income: FC = () => {
   const isLoading = useIncome();
-  return isLoading ? <IncomeManager/> : <Loader/>
+  return isLoading ?  <Loader/> : <IncomeManager/>;
 };
 
 export default Income;
