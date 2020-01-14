@@ -45,7 +45,10 @@ export const useIncomeModal = (): Hook => {
       return;
     }
     createIncome(incomeToCreate)
-      .then((list) => dispatch(incomeActions.setIncome(list)))
+      .then((list) => {
+        dispatch(incomeActions.setIncome(list));
+        handleClose();
+      })
       .catch(() => dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'})));
   };
 

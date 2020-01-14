@@ -2,18 +2,15 @@ import React, {FC} from "react";
 import {Delete} from "@material-ui/icons";
 import {CircularProgress, IconButton} from "@material-ui/core";
 import {useDeleteButton} from "./useDeleteButton";
+import useStyles from "./useStyles";
 
 interface Props {
   _id: string;
-  classes: {
-    wrapper: string;
-    loader: string;
-    loadingIcon: string;
-  }
 }
 
-const DeleteButton: FC<Props> = ({_id, classes}) => {
+const DeleteButton: FC<Props> = ({_id}) => {
   const {isLoading, handleDelete} = useDeleteButton(_id);
+  const classes = useStyles();
   return (
     <div className={classes.wrapper}>
       <IconButton

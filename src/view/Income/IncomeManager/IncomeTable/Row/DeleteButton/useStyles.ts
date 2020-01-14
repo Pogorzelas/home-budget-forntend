@@ -1,7 +1,6 @@
-import DeleteButton from "./DeleteButton.component";
-import {withStyles} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 
-export default withStyles(() => ({
+export default makeStyles(() => ({
   wrapper: {
     position: 'relative',
   },
@@ -14,4 +13,4 @@ export default withStyles(() => ({
     top: 0,
     left: 0,
   },
-}))(DeleteButton);
+}));
