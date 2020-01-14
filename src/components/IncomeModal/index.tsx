@@ -16,10 +16,12 @@ const IncomeModal: FC = () => {
       <DialogTitle>{TITLE}</DialogTitle>
       <DialogContent className={classes.content}>
         <TextField
+          className={classes.input}
           label='źródło'
           onChange={handleChange('source')}
         />
         <NumberFormat
+          className={classes.input}
           label='ilość'
           customInput={TextField}
           onChange={handleChange('amount')}
