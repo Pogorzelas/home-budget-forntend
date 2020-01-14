@@ -1,7 +1,6 @@
-import TableName from "./TableName.component";
-import {withStyles} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 
-export default withStyles((theme) => ({
+export default makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
@@ -10,4 +9,4 @@ export default withStyles((theme) => ({
     borderBottom: '1px solid rgba(81, 81, 81, 1)',
     padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`
   },
-}))(TableName);
+}));

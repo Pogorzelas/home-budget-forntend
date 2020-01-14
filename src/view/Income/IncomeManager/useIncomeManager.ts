@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {Income} from "../../interfaces/Income.interface";
+import {Income} from "../../../interfaces/Income.interface";
 
 interface State {
   income: {

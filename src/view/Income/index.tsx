@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import IncomeManager from "../../components/IncomeManager";
+import IncomeManager from "./IncomeManager/index";
 import {useIncome} from "./useIncome";
 import Loader from "../../components/Loader";
 

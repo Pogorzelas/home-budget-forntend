@@ -2,18 +2,14 @@ import React, {FC} from "react";
 import {Fab, Typography} from "@material-ui/core";
 import {Add} from "@material-ui/icons";
 import {useAddButton} from "./useAddButton";
-import IncomeModal from "../../IncomeModal/index";
+import IncomeModal from "../../../../../components/IncomeModal/index";
+import useStyles from "./useStyles";
 
 const TABLE_NAME = 'Dochody';
 
-interface Props {
-  classes: {
-    root: string;
-  }
-}
-
-const TableName: FC<Props> = ({classes}) => {
+const TableName: FC = () => {
   const {openModal} = useAddButton();
+  const classes = useStyles();
   return (
     <div className={classes.root}>
       <div/>

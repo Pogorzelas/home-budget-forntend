@@ -1,6 +1,6 @@
-import {dialogActions} from "../../../../store/dialog/action";
-import {incomeActions} from "../../../../store/income/action";
-import {deleteIncome} from "../../../../api/income";
+import {dialogActions} from "../../../../../../store/dialog/action";
+import {incomeActions} from "../../../../../../store/income/action";
+import {deleteIncome} from "../../../../../../api/income";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 

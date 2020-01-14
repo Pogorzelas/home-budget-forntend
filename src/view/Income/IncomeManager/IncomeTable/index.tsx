@@ -1,8 +1,8 @@
 import React, {FC, ReactElement} from "react";
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
-import Row from "./Row";
-import {Income} from "../../interfaces/Income.interface";
-import TableName from "./TableName";
+import Row from "./Row/index";
+import {Income} from "../../../../interfaces/Income.interface";
+import TableName from "./TableName/index";
 
 const AMOUNT = 'ilość';
 const SOURCE = 'źródło';

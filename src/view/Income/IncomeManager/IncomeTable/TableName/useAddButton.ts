@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {dialogActions} from "../../../store/dialog/action";
+import {dialogActions} from "../../../../../store/dialog/action";
 
 interface Hook {
   openModal: VoidFunction;

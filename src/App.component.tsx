@@ -4,7 +4,7 @@ import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
 import Home from './view/Home';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Layout from "./layouts";
-import Income from "./view/Income";
+import Income from "./view/Income/index";
 
 const App: FC = () => {
   const {theme} = useAppProvider();

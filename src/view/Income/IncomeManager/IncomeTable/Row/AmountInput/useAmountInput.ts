@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NumberFormatValues} from "react-number-format";
-import {updateIncome} from "../../../../api/income";
+import {updateIncome} from "../../../../../../api/income";
 
 interface Hook {
   value: number;

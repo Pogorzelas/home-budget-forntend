@@ -1,8 +1,8 @@
 import {FC, default as React} from "react";
 import {TableCell, TableRow} from "@material-ui/core";
-import AmountInput from "./AmountInput";
-import SourceInput from "./SourceInput";
-import DeleteButton from "./DeleteButton";
+import AmountInput from "./AmountInput/index";
+import SourceInput from "./SourceInput/index";
+import DeleteButton from "./DeleteButton/index";
 
 interface Props {
   _id: string;

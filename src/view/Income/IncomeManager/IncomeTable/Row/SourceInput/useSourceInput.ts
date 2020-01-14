@@ -1,5 +1,5 @@
 import {ChangeEvent, useState} from "react";
-import {updateIncome} from "../../../../api/income";
+import {updateIncome} from "../../../../../../api/income";
 
 interface Hook {
   value: string;
