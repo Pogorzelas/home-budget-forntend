@@ -5,6 +5,7 @@ import {HandleChange} from "./HandleChange";
 import {Income} from "../../interfaces/Income.interface";
 import {createIncome} from "../../api/income";
 import {incomeActions} from "../../store/income/action";
+import {validateObject} from "../../utils/validateObject";
 
 interface Hook {
   isOpen: boolean;
@@ -38,7 +39,12 @@ export const useIncomeModal = (): Hook => {
   };
 
   const addIncome = (): void => {
-    createIncome({...income.current})
+    const incomeToCreate = income.current;
+    if (validateObject(incomeToCreate, 2)) {
+      dispatch(dialogActions.snackBar({type: 'error', massage: 'uzupełnij pola'}));
+      return;
+    }
+    createIncome(incomeToCreate)
       .then((list) => dispatch(incomeActions.setIncome(list)))
       .catch(() => dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'})));
   };

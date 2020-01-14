@@ -7,7 +7,7 @@ const CANCEL_BUTTON = 'Wyjdź';
 const ADD_BUTTON = 'Dodaj';
 
 const IncomeModal: FC = () => {
-  const {isOpen, handleClose, addIncome} = useIncomeModal();
+  const {isOpen, handleClose, handleChange, addIncome} = useIncomeModal();
   return (
     <Dialog open={isOpen} onClose={handleClose}>
       <DialogTitle>{TITLE}</DialogTitle>
