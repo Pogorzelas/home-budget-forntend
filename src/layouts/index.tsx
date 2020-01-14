@@ -1,7 +1,7 @@
 import React, {FC, ReactElement, Fragment} from "react";
-import NavBar from "./NavBar";
-import SideMenu from "./SideMenu";
-import SnackBar from "./SnackBar";
+import NavBar from "./NavBar/index";
+import SideMenu from "./SideMenu/index";
+import SnackBar from "./SnackBar/index";
 
 interface Props {
   children: ReactElement[];

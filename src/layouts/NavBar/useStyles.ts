@@ -1,7 +1,6 @@
-import NavBar from "./NavBar.component";
-import {withStyles} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 
-export default withStyles((theme) => ({
+export default makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
@@ -18,4 +17,4 @@ export default withStyles((theme) => ({
       flexDirection: 'row-reverse',
     },
   }
-}))(NavBar);
+}));

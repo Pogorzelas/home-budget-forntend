@@ -1,7 +1,6 @@
-import Logo from "./Logo.component";
-import {withStyles} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 
-export default withStyles((theme) => ({
+export default makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'row',
@@ -21,4 +20,4 @@ export default withStyles((theme) => ({
       fontSize: 45
     }
   }
-}))(Logo);
+}));

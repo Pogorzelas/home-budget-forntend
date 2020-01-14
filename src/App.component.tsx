@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import {useAppProvider} from "./useAppProvider";
 import {CssBaseline, MuiThemeProvider} from "@material-ui/core";
-import Home from './view/Home';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Layout from "./layouts";
+import Layout from "./layouts/index";
+import Home from './view/Home/index';
 import Income from "./view/Income/index";
 
 const App: FC = () => {

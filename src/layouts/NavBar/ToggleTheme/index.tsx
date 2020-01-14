@@ -2,15 +2,11 @@ import React, {FC} from "react";
 import {BrightnessMedium} from '@material-ui/icons';
 import {useToggleTheme} from "./useToggleTheme";
 import {IconButton} from "@material-ui/core";
+import useStyles from "./useStyles";
 
-interface Props {
-  classes: {
-    root: string;
-  }
-}
-
-const ToggleTheme: FC<Props> = ({classes}) => {
+const ToggleTheme: FC = () => {
   const {handleTheme} = useToggleTheme();
+  const classes = useStyles();
   return (
     <IconButton onClick={handleTheme} className={classes.root}>
       <BrightnessMedium/>
