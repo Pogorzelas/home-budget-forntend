@@ -1,7 +1,6 @@
-import Loader from "./Loader.component";
-import {withStyles} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
 
-export default withStyles(() => ({
+export default makeStyles(() => ({
   wrapper: {
     position: 'fixed',
     width: '100%',
@@ -16,4 +15,4 @@ export default withStyles(() => ({
     marginTop: '-45px',
     marginLeft: '-45px',
   }
-}))(Loader);
+}));
