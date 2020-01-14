@@ -4,7 +4,7 @@ import {Income} from "../../interfaces/Income.interface";
 export type IncomeAction =
   | Action<'Income.SetIncome', {list: Income[]}>
 
-export const IncomeActions = {
+export const incomeActions = {
   setIncome(list: Income[]): IncomeAction {
     return {
       type: 'Income.SetIncome',

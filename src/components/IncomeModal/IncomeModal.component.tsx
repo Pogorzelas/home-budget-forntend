@@ -12,7 +12,7 @@ const IncomeModal: FC = () => {
     <Dialog open={isOpen} onClose={handleClose}>
       <DialogTitle>{TITLE}</DialogTitle>
       <DialogContent>
-        Hey you
+
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>

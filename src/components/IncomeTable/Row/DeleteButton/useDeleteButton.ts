@@ -1,5 +1,5 @@
 import {dialogActions} from "../../../../store/dialog/action";
-import {IncomeActions} from "../../../../store/income/action";
+import {incomeActions} from "../../../../store/income/action";
 import {deleteIncome} from "../../../../api/income";
 import {useDispatch} from "react-redux";
 import {useState} from "react";
@@ -18,7 +18,7 @@ export const useDeleteButton = (_id: string): Hook => {
     deleteIncome(_id)
       .then((list) => {
         dispatch(dialogActions.snackBar({type: 'success', massage: 'udalo sie'}));
-        dispatch(IncomeActions.setIncome(list))
+        dispatch(incomeActions.setIncome(list))
       })
       .catch(() => {
         dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'}));

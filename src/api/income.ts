@@ -6,7 +6,7 @@ const URL = 'incomes';
 
 const getIncome = (): Promise<Income[]> => api.get(URL).json();
 
-const createIncome = (incomeData: Income): Promise<Income[]> => {
+const createIncome = (incomeData: Partial<Income>): Promise<Income[]> => {
   const options = {
     json: {
       ...incomeData,
