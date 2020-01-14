@@ -30,7 +30,7 @@ export const useIncomeModal = (): Hook => {
       const value = event.target.value;
       income.current = {
         ...income.current,
-        [inputName]: value
+        [inputName]: inputName === 'amount' ? Number(value) : value
       }
     };
 
