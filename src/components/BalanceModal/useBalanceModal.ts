@@ -46,7 +46,7 @@ export const useBalanceModal = (): Hook => {
     }
     createBalance(incomeToCreate)
       .then((list) => {
-        dispatch(balanceActions.setIncome(list));
+        dispatch(balanceActions.setBalances(list));
         handleClose();
       })
       .catch(() => dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'})));

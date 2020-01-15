@@ -14,7 +14,7 @@ export const useBalance = (): boolean => {
     getBalance()
       .then((data) => {
         if (isSubscribe) {
-          dispatch(balanceActions.setIncome(data));
+          dispatch(balanceActions.setBalances(data));
         }
       })
       .finally(() => setIsLoading(false));

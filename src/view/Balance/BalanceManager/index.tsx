@@ -3,10 +3,11 @@ import BalanceTable from "./BalanceTable/index";
 import {useBalanceManager} from "./useBalanceManager";
 
 const BalanceManager: FC = () => {
-  const {incomes} = useBalanceManager();
+  const {incomes, expenses} = useBalanceManager();
   return (
     <Fragment>
       <BalanceTable list={incomes}/>
+      <BalanceTable list={expenses}/>
     </Fragment>
   )
 };

@@ -3,18 +3,20 @@ import {Balance} from "../../../interfaces/Balance.interface";
 
 interface State {
   balance: {
-    incomes: Balance[]
+    incomes: Balance[];
+    expenses: Balance[];
   }
 }
 
 interface Hook {
-  incomes: Balance[]
+  incomes: Balance[];
+  expenses: Balance[];
 }
 
 export const useBalanceManager = (): Hook => {
-  const incomes = useSelector((state: State): Balance[] => state.balance.incomes);
-
+  const {incomes, expenses} = useSelector<State, Hook>(state => ({...state.balance}));
   return {
-    incomes
+    incomes,
+    expenses
   }
 };

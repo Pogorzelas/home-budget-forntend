@@ -6,7 +6,8 @@ export default (state = initialState, action: BalanceAction): BalanceState => {
     case 'Balance.SetIncome':
       return {
         ...state,
-        incomes: action.payload.list
+        expenses: action.payload.expenses,
+        incomes: action.payload.incomes
       };
     default:
       return state

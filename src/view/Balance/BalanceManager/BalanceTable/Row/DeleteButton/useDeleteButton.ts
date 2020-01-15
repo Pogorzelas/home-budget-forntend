@@ -18,7 +18,7 @@ export const useDeleteButton = (_id: string): Hook => {
     deleteBalance(_id)
       .then((list) => {
         dispatch(dialogActions.snackBar({type: 'success', massage: 'udalo sie'}));
-        dispatch(balanceActions.setIncome(list))
+        dispatch(balanceActions.setBalances(list))
       })
       .catch(() => {
         dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'}));
