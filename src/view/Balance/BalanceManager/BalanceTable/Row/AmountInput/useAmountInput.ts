@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NumberFormatValues} from "react-number-format";
-import {updateIncome} from "../../../../../../api/income";
+import {updateBalance} from "../../../../../../api/balance";
 
 interface Hook {
   value: number;
@@ -16,7 +16,7 @@ export const useAmountInput = (amount: number, _id: string): Hook => {
   };
 
   const handleUpdate = (): void => {
-      updateIncome(_id, {amount: value});
+      updateBalance(_id, {amount: value});
     };
 
   return {

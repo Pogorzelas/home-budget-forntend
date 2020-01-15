@@ -1,5 +1,5 @@
 import {ChangeEvent, useState} from "react";
-import {updateIncome} from "../../../../../../api/income";
+import {updateBalance} from "../../../../../../api/balance";
 
 interface Hook {
   value: string;
@@ -16,7 +16,7 @@ export const useSourceInput = (source: string, _id: string): Hook => {
   };
 
   const handleUpdate = (): void => {
-    updateIncome(_id, {source: value});
+    updateBalance(_id, {source: value});
   };
 
   return {

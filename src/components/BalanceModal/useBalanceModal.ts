@@ -3,7 +3,7 @@ import {dialogActions} from "../../store/dialog/action";
 import {useRef} from "react";
 import {HandleChange} from "./HandleChange";
 import {Balance} from "../../interfaces/Balance.interface";
-import {createIncome} from "../../api/income";
+import {createBalance} from "../../api/balance";
 import {balanceActions} from "../../store/balance/action";
 import {validateObject} from "../../utils/validateObject";
 
@@ -44,7 +44,7 @@ export const useBalanceModal = (): Hook => {
       dispatch(dialogActions.snackBar({type: 'error', massage: 'uzupełnij pola'}));
       return;
     }
-    createIncome(incomeToCreate)
+    createBalance(incomeToCreate)
       .then((list) => {
         dispatch(balanceActions.setIncome(list));
         handleClose();
