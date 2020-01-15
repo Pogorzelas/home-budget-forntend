@@ -3,6 +3,7 @@ import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow}
 import Row from "./Row/index";
 import {Balance} from "../../../../interfaces/Balance.interface";
 import TableName from "./TableName/index";
+import {BalanceType} from "../../../../enums/BalanceType.enum";
 
 const AMOUNT = 'ilość';
 const SOURCE = 'źródło';
@@ -10,11 +11,12 @@ const OPTIONS = 'opcje';
 
 interface Props {
   list: Balance[];
+  type: BalanceType;
 }
 
-const BalanceTable: FC<Props> = ({list}) =>
+const BalanceTable: FC<Props> = ({list, type}) =>
   <TableContainer component={Paper}>
-    <TableName/>
+    <TableName type={type}/>
     <Table>
       <TableHead>
         <TableRow>
