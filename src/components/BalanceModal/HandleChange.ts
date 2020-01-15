@@ -1,3 +1,4 @@
 import {ChangeEvent, Dispatch} from "react";
 
-export type HandleChange = (inputName: string) => Dispatch<ChangeEvent<HTMLInputElement>>;
+export type HandleChange = (inputName: string) => OnChange;
+export type OnChange = Dispatch<ChangeEvent<HTMLInputElement>>;

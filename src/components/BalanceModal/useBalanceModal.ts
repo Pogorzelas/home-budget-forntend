@@ -20,9 +20,11 @@ interface State {
   }
 }
 
+const NUMBER_OF_REQUIRED_FIELD = 3;
+
 export const useBalanceModal = (): Hook => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state: State): boolean => state.dialog.isIncomeModalOpened);
+  const isOpen = useSelector<State, boolean>(state => state.dialog.isIncomeModalOpened);
   const income = useRef({} as Partial<Balance>);
 
   const handleChange: HandleChange = (inputName) =>
@@ -40,7 +42,7 @@ export const useBalanceModal = (): Hook => {
 
   const addIncome = (): void => {
     const incomeToCreate = income.current;
-    if (validateObject(incomeToCreate, 2)) {
+    if (validateObject(incomeToCreate, NUMBER_OF_REQUIRED_FIELD)) {
       dispatch(dialogActions.snackBar({type: 'error', massage: 'uzupełnij pola'}));
       return;
     }

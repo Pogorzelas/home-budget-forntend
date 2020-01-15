@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
-import NumberFormat from "react-number-format";
 import {useStyles} from "./useStyles";
 import {useBalanceModal} from "./useBalanceModal";
+import ModalContent from "./ModalContent";
 
 const TITLE = 'Dodaj przychód';
 const CANCEL_BUTTON = 'Wyjdź';
@@ -12,19 +12,14 @@ const BalanceModal: FC = () => {
   const {isOpen, handleClose, handleChange, addIncome} = useBalanceModal();
   const classes = useStyles();
   return (
-    <Dialog open={isOpen} onClose={handleClose}>
+    <Dialog
+      open={isOpen}
+      onClose={handleClose}
+    >
       <DialogTitle>{TITLE}</DialogTitle>
       <DialogContent className={classes.content}>
-        <TextField
-          className={classes.input}
-          label='źródło'
-          onChange={handleChange('source')}
-        />
-        <NumberFormat
-          className={classes.input}
-          label='ilość'
-          customInput={TextField}
-          onChange={handleChange('amount')}
+        <ModalContent
+          handleChange={handleChange}
         />
       </DialogContent>
       <DialogActions>

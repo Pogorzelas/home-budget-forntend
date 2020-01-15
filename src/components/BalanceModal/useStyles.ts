@@ -1,11 +1,8 @@
 import {makeStyles} from "@material-ui/core";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
   content: {
     display: 'flex',
     flexDirection: 'column',
   },
-  input: {
-    marginBot: theme.spacing(1)
-  }
 }));
