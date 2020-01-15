@@ -2,14 +2,14 @@ import React, {FC} from "react";
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
 import NumberFormat from "react-number-format";
 import {useStyles} from "./useStyles";
-import {useIncomeModal} from "./useIncomeModal";
+import {useBalanceModal} from "./useBalanceModal";
 
 const TITLE = 'Dodaj przychód';
 const CANCEL_BUTTON = 'Wyjdź';
 const ADD_BUTTON = 'Dodaj';
 
-const IncomeModal: FC = () => {
-  const {isOpen, handleClose, handleChange, addIncome} = useIncomeModal();
+const BalanceModal: FC = () => {
+  const {isOpen, handleClose, handleChange, addIncome} = useBalanceModal();
   const classes = useStyles();
   return (
     <Dialog open={isOpen} onClose={handleClose}>
@@ -39,4 +39,4 @@ const IncomeModal: FC = () => {
   );
 };
 
-export default IncomeModal;
+export default BalanceModal;

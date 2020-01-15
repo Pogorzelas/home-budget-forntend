@@ -1,10 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {dialogActions} from "../../store/dialog/action";
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import {HandleChange} from "./HandleChange";
-import {Income} from "../../interfaces/Income.interface";
+import {Balance} from "../../interfaces/Balance.interface";
 import {createIncome} from "../../api/income";
-import {incomeActions} from "../../store/income/action";
+import {balanceActions} from "../../store/balance/action";
 import {validateObject} from "../../utils/validateObject";
 
 interface Hook {
@@ -20,10 +20,10 @@ interface State {
   }
 }
 
-export const useIncomeModal = (): Hook => {
+export const useBalanceModal = (): Hook => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state: State): boolean => state.dialog.isIncomeModalOpened);
-  const income = useRef({} as Partial<Income>);
+  const income = useRef({} as Partial<Balance>);
 
   const handleChange: HandleChange = (inputName) =>
     (event) => {
@@ -46,7 +46,7 @@ export const useIncomeModal = (): Hook => {
     }
     createIncome(incomeToCreate)
       .then((list) => {
-        dispatch(incomeActions.setIncome(list));
+        dispatch(balanceActions.setIncome(list));
         handleClose();
       })
       .catch(() => dispatch(dialogActions.snackBar({type: 'error', massage: 'nie powiodło się'})));

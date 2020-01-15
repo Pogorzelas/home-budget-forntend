@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {getIncome} from "../../api/income";
-import {incomeActions} from "../../store/income/action";
+import {balanceActions} from "../../store/balance/action";
 import {useDispatch} from "react-redux";
 
-export const useIncome = (): boolean => {
+export const useBalance = (): boolean => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,7 +14,7 @@ export const useIncome = (): boolean => {
     getIncome()
       .then((data) => {
         if (isSubscribe) {
-          dispatch(incomeActions.setIncome(data));
+          dispatch(balanceActions.setIncome(data));
         }
       })
       .finally(() => setIsLoading(false));

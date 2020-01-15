@@ -2,8 +2,8 @@ import React, {FC} from "react";
 import {Fab, Typography} from "@material-ui/core";
 import {Add} from "@material-ui/icons";
 import {useAddButton} from "./useAddButton";
-import IncomeModal from "../../../../../components/IncomeModal/index";
 import useStyles from "./useStyles";
+import BalanceModal from "../../../../../components/BalanceModal";
 
 const TABLE_NAME = 'Dochody';
 
@@ -23,7 +23,7 @@ const TableName: FC = () => {
       >
         <Add/>
       </Fab>
-      <IncomeModal/>
+      <BalanceModal/>
     </div>
   )
 };

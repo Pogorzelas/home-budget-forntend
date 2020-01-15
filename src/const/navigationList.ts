@@ -10,7 +10,7 @@ export const navigationList: NavigationOption[] = [
     path: Pathname.Home,
   },
   {
-    name: 'income',
+    name: 'balance',
     icon: MonetizationOnIcon,
     path: Pathname.Income
   }
