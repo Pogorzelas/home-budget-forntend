@@ -1,4 +1,4 @@
 export enum Pathname {
   Home = '/',
-  Income = '/income'
+  Balance = '/balance'
 }

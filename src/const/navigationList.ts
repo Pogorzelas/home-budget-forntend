@@ -12,6 +12,6 @@ export const navigationList: NavigationOption[] = [
   {
     name: 'balance',
     icon: MonetizationOnIcon,
-    path: Pathname.Income
+    path: Pathname.Balance
   }
 ];
